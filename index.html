@@ -1,111 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Refugio Coin</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-      body {
-        margin: 0;
-        font-family: 'Inter', sans-serif;
-        background-color: #0d0d0d;
-        color: #e0e0e0;
-        overflow-x: hidden;
-      }
-      header {
-        text-align: center;
-        padding: 4rem 1rem 2rem;
-        animation: fadeIn 1.2s ease-out;
-      }
-      header img {
-        width: 120px;
-        animation: bounceIn 1.4s ease;
-      }
-      h1 {
-        font-size: 2.5rem;
-        margin: 1rem 0 0.5rem;
-        color: #d4af37;
-      }
-      p {
-        font-size: 1.1rem;
-        max-width: 600px;
-        margin: 0 auto;
-        color: #ccc;
-      }
-      section.features {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-        padding: 3rem 2rem;
-        background-color: #1a1a1a;
-      }
-      .feature {
-        background: #111;
-        padding: 2rem;
-        border-radius: 1rem;
-        box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
-        transition: transform 0.3s ease;
-      }
-      .feature:hover {
-        transform: translateY(-5px);
-      }
-      .feature h3 {
-        color: #d4af37;
-        margin-bottom: 0.5rem;
-      }
-      footer {
-        text-align: center;
-        padding: 2rem;
-        font-size: 0.9rem;
-        color: #777;
-      }
-      footer a {
-        color: #d4af37;
-        text-decoration: none;
-      }
-      footer a:hover {
-        text-decoration: underline;
-      }
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RefugioCoin</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="assets/ChatGPT Image 5 may 2025, 21_14_13.png">
+</head>
+<body>
+  <header>
+    <img src="assets/ChatGPT Image 5 may 2025, 21_14_13.png" alt="RefugioCoin Logo" class="logo" />
+    <h1>RefugioCoin</h1>
+    <p>Tu defensa financiera en tiempos de crisis.</p>
+    <a href="./Whitepaper_Refugio_Coin_RFC.pdf" class="btn" target="_blank">📄 Whitepaper</a>
+  </header>
 
-      @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
-      }
+  <section class="features">
+    <div class="feature">
+      <h3>Refugio ante la crisis</h3>
+      <p>Protege tu valor ante guerras, colapsos y emergencias globales.</p>
+    </div>
+    <div class="feature">
+      <h3>Impuestos & quema inteligente</h3>
+      <p>Sistema con baja fricción y deflación programada.</p>
+    </div>
+    <div class="feature">
+      <h3>Gobernanza comunitaria</h3>
+      <p>Decisiones descentralizadas desde el segundo año.</p>
+    </div>
+  </section>
 
-      @keyframes bounceIn {
-        0% { transform: scale(0.8); opacity: 0; }
-        60% { transform: scale(1.1); opacity: 1; }
-        100% { transform: scale(1); }
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <img src="ChatGPT Image 5 may 2025, 21_14_13.png" alt="Refugio Coin Logo" />
-      <h1>Refugio Coin</h1>
-      <p>Tu defensa financiera ante cualquier crisis. Seguridad, confianza y estabilidad en un mundo incierto.</p>
-    </header>
+  <footer>
+    <p>&copy; 2025 RefugioCoin • <a href="mailto:info@refugiocoin.com">info@refugiocoin.com</a></p>
+  </footer>
 
-    <section class="features">
-      <div class="feature">
-        <h3>Refugio en tiempos de crisis</h3>
-        <p>Una moneda diseñada para proteger el valor durante guerras, colapsos económicos o emergencias personales.</p>
-      </div>
-      <div class="feature">
-        <h3>Impuestos y quema inteligente</h3>
-        <p>Modelo sostenible con impuestos mínimos por transacción y mecanismo de quema para mantener el valor.</p>
-      </div>
-      <div class="feature">
-        <h3>Gobernanza comunitaria</h3>
-        <p>Participación de la comunidad en decisiones clave, garantizando transparencia y descentralización.</p>
-      </div>
-    </section>
-
-    <footer>
-      <p>&copy; 2025 Refugio Coin. Todos los derechos reservados.</p>
-      <p>Contacto: <a href="mailto:info@refugiocoin.com">info@refugiocoin.com</a></p>
-      <p><a href="./Whitepaper_Refugio_Coin_RFC.pdf" target="_blank">📄 Leer el Whitepaper</a></p>
-    </footer>
-  </body>
+  <script src="script.js"></script>
+</body>
 </html>
+
