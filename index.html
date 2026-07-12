@@ -8,11 +8,22 @@
   <link rel="icon" type="image/png" href="assets/Logo rfg.png">
 </head>
 <body>
+  
   <header>
     <img src="assets/ChatGPT Image 5 may 2025, 21_14_13.png" alt="RefugioCoin Logo" class="logo" />
     <h1>RefugioCoin</h1>
-    <p>Tu defensa financiera en tiempos de crisis.</p>
-    <a href="./Whitepaper_Refugio_Coin(RFG).pdf.pdf" class="btn" target="_blank">📄 Whitepaper</a>
+    <p>Tu defense financiera en tiempos de crisis.</p>
+    <div class="header-buttons">
+      <a href="./Whitepaper_Refugio_Coin(RFG).pdf" class="btn" target="_blank">📄 Whitepaper</a>
+    </div>
+
+    <div class="contract-container">
+      <p class="contract-label">Contrato Oficial (BSC):</p>
+      <div class="contract-box">
+        <span id="contract-address">0xaA56277974856D221393EB9783dd0b07af7de4d1</span>
+        <button id="btn-copy" onclick="copyContract()">📋 Copiar</button>
+      </div>
+    </div>
   </header>
 
   <section class="features">
@@ -29,12 +40,71 @@
       <p>Decisiones descentralizadas desde el segundo año.</p>
     </div>
   </section>
-<!-- Sección de Redes Sociales -->
-<div class="social-links">
+
+  <section class="tokenomics-section">
+    <h2>Distribución y Tokenomics</h2>
+    <p class="section-subtitle">Suministro Total Fijo: <strong>100.000.000 $RFG</strong></p>
+    
+    <div class="tokenomics-grid">
+      <div class="token-card">
+        <h4>50%</h4>
+        <p>Mercado Libre & Liquidez</p>
+      </div>
+      <div class="token-card">
+        <h4>30%</h4>
+        <p>Wallet de Reserva</p>
+        <span class="card-note">(Quema del 10% anual)</span>
+      </div>
+      <div class="token-card">
+        <h4>20%</h4>
+        <p>Wallet de Desarrollo</p>
+      </div>
+    </div>
+
+    <div class="tax-box">
+      <p><strong>⚡ Operaciones en DEX (PancakeSwap):</strong> 0% Impuestos</p>
+      <p><strong>🔄 Transacciones P2P Directas:</strong> 0.8% de respaldo sostenible</p>
+    </div>
+  </section>
+
+  <section class="roadmap-section">
+    <h2>Hoja de Ruta (Roadmap)</h2>
+    <div class="roadmap-timeline">
+      <div class="roadmap-step completed">
+        <div class="step-badge">Fase 1</div>
+        <h4>Lanzamiento Primario</h4>
+        <p>Despliegue del contrato en BNB Smart Chain, verificación de código en BscScan y creación de la pool inicial.</p>
+        <span class="status-tag">✓ Completado</span>
+      </div>
+      
+      <div class="roadmap-step current">
+        <div class="step-badge">Fase 2</div>
+        <h4>Seguridad comunitaria (Próximos 3 meses)</h4>
+        <p>Bloqueo programado de liquidez por estabilidad, auditorías automatizadas y apertura oficial de redes sociales.</p>
+        <span class="status-tag">En progreso</span>
+      </div>
+
+      <div class="roadmap-step upcoming">
+        <div class="step-badge">Fase 3</div>
+        <h4>Consolidación y Quema (Próximos 6 meses)</h4>
+        <p>Activación del primer ciclo de quema automatizada sobre la reserva y despliegue del sistema de gobernanza P2P.</p>
+        <span class="status-tag">Próximamente</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h3>¿Listo para proteger tu capital?</h3>
+    <p>Adquiere tus tokens de forma segura a través del par oficial en PancakeSwap.</p>
+    <a href="https://pancakeswap.finance/swap?outputCurrency=0xaA56277974856D221393EB9783dd0b07af7de4d1" class="btn btn-buy" target="_blank">🛒 Adquirir $RFG en PancakeSwap</a>
+  </section>
+
+  <div class="social-links">
     <a href="https://github.com/refugio-coin-token" target="_blank">GitHub</a>
     <a href="https://www.tiktok.com/@refugiocoin" target="_blank">TikTok</a>
     <a href="https://www.instagram.com/refugiocoin?igsh=MTJ4YTU1b3Y2eGZwdg==" target="_blank">Instagram</a>
-</div>
+  </div>
+
   <footer>
     <p>&copy; 2025 RefugioCoin • <a href="mailto:refugio.coin.token@gmail.com">refugio.coin.token@gmail.com</a></p>
   </footer>
