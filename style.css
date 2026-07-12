@@ -53,6 +53,29 @@ p {
   box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
 }
 
+/* Estilos para los enlaces de redes sociales */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.social-links a {
+    color: #f5c242; /* Color dorado a juego con tu diseño */
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #ffffff; /* Cambia a blanco cuando pasas el ratón por encima */
+    text-shadow: 0 0 10px rgba(245, 194, 66, 0.5); /* Un ligero brillo dorado */
+}
+
+
 footer {
   padding: 2rem;
   font-size: 0.9rem;
