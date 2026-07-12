@@ -15,11 +15,16 @@ body {
 h1 {
   color: #d4af37;
   font-size: 2.5rem;
+  margin-bottom: 0.5rem;
 }
 
 p {
   color: #ccc;
   font-size: 1.1rem;
+}
+
+.header-buttons {
+  margin-bottom: 1.5rem;
 }
 
 .btn {
@@ -31,18 +36,72 @@ p {
   border-radius: 8px;
   text-decoration: none;
   font-weight: bold;
-  transition: background 0.3s ease;
-}
-.btn:hover {
-  background: #e6c555;
+  transition: all 0.3s ease;
 }
 
+.btn:hover {
+  background: #e6c555;
+  transform: translateY(-2px);
+}
+
+/* Estilos de la barra del contrato */
+.contract-container {
+  margin: 1.5rem auto;
+  max-width: 500px;
+  padding: 0 1rem;
+}
+
+.contract-label {
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 0.3rem;
+}
+
+.contract-box {
+  background: #161616;
+  border: 1px solid #333;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+#contract-address {
+  font-family: monospace;
+  font-size: 0.85rem;
+  color: #f5c242;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#btn-copy {
+  background: #262626;
+  color: #fff;
+  border: 1px solid #444;
+  padding: 0.4rem 0.8rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.8rem;
+  transition: all 0.2s ease;
+}
+
+#btn-copy:hover {
+  background: #d4af37;
+  color: #000;
+  border-color: #d4af37;
+}
+
+/* Módulo de características */
 .features {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
-  padding: 3rem 1rem;
+  padding: 2rem 1rem;
 }
 
 .feature {
@@ -50,34 +109,207 @@ p {
   padding: 2rem;
   border-radius: 1rem;
   width: 280px;
-  box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.1);
 }
 
-/* Estilos para los enlaces de redes sociales */
+.feature h3 {
+  color: #d4af37;
+  margin-top: 0;
+}
+
+/* Estilos de Tokenomics */
+.tokenomics-section {
+  padding: 3rem 1rem;
+  background: #111;
+  border-top: 1px solid #1a1a1a;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.tokenomics-section h2 {
+  color: #d4af37;
+}
+
+.section-subtitle {
+  color: #aaa;
+  margin-bottom: 2rem;
+}
+
+.tokenomics-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.token-card {
+  background: #1a1a1a;
+  border-left: 4px solid #d4af37;
+  padding: 1.5rem;
+  border-radius: 8px;
+  width: 220px;
+  text-align: left;
+}
+
+.token-card h4 {
+  font-size: 2rem;
+  margin: 0;
+  color: #fff;
+}
+
+.token-card p {
+  margin: 0.5rem 0 0;
+  font-size: 1rem;
+}
+
+.card-note {
+  font-size: 0.8rem;
+  color: #888;
+  display: block;
+}
+
+.tax-box {
+  background: #161616;
+  border: 1px dashed #444;
+  max-width: 500px;
+  margin: 2rem auto 0;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.tax-box p {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+}
+
+/* Estilos de Roadmap */
+.roadmap-section {
+  padding: 4rem 1rem;
+}
+
+.roadmap-section h2 {
+  color: #d4af37;
+  margin-bottom: 2.5rem;
+}
+
+.roadmap-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.roadmap-step {
+  background: #161616;
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid #222;
+  position: relative;
+}
+
+.step-badge {
+  background: #262626;
+  color: #d4af37;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.roadmap-step h4 {
+  margin: 0 0 0.5rem;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.roadmap-step p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #aaa;
+  line-height: 1.4;
+}
+
+.status-tag {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.completed { border-left: 4px solid #28a745; }
+.completed .status-tag { color: #28a745; }
+
+.current { border-left: 4px solid #f5c242; box-shadow: 0 0 15px rgba(245, 194, 66, 0.1); }
+.current .status-tag { color: #f5c242; }
+
+.upcoming { border-left: 4px solid #555; }
+.upcoming .status-tag { color: #777; }
+
+/* Sección de Llamada a la Acción (Compra) */
+.cta-section {
+  background: linear-gradient(135deg, #111 0%, #1a160b 100%);
+  padding: 3.5rem 1rem;
+  border-top: 1px solid #222;
+}
+
+.cta-section h3 {
+  color: #fff;
+  font-size: 1.6rem;
+  margin: 0;
+}
+
+.btn-buy {
+  background: #f5c242;
+  font-size: 1.1rem;
+  padding: 0.9rem 2rem;
+  margin-top: 1.5rem;
+  box-shadow: 0 4px 15px rgba(245, 194, 66, 0.3);
+}
+
+.btn-buy:hover {
+  background: #fff;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.4);
+}
+
+/* Redes Sociales */
 .social-links {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    margin-top: 40px;
-    margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 50px;
+  margin-bottom: 20px;
 }
 
 .social-links a {
-    color: #f5c242; /* Color dorado a juego con tu diseño */
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 16px;
-    transition: color 0.3s ease;
+  color: #f5c242;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  transition: color 0.3s ease;
 }
 
 .social-links a:hover {
-    color: #ffffff; /* Cambia a blanco cuando pasas el ratón por encima */
-    text-shadow: 0 0 10px rgba(245, 194, 66, 0.5); /* Un ligero brillo dorado */
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(245, 194, 66, 0.5);
 }
-
 
 footer {
   padding: 2rem;
   font-size: 0.9rem;
   color: #888;
+  border-top: 1px solid #111;
+}
+
+footer a {
+  color: #888;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #d4af37;
 }
