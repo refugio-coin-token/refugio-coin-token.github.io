@@ -1,315 +1,742 @@
-body {
+/* ==========================================================================
+   RESET Y VARIABLES (Estética Dark Cyber-Security)
+   ========================================================================== */
+:root {
+  --bg-dark: #07070a;
+  --bg-card: rgba(18, 18, 26, 0.75);
+  --gold-primary: #d4af37;
+  --gold-glow: #f5c242;
+  --cyan-accent: #00e5ff;
+  --cyan-glow: rgba(0, 229, 255, 0.2);
+  --border-light: rgba(255, 255, 255, 0.05);
+  --text-primary: #f0f0f5;
+  --text-secondary: #9aa0b0;
+}
+
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #0d0d0d;
-  color: #e0e0e0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: var(--bg-dark);
+  color: var(--text-primary);
   overflow-x: hidden;
-  text-align: center;
+  position: relative;
+  line-height: 1.6;
+}
+
+/* Efectos de fondo cibernéticos */
+.cyber-grid {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.01) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.01) 1px, transparent 1px);
+  background-size: 50px 50px;
+  z-index: -2;
+  pointer-events: none;
+}
+
+.glow-orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(140px);
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.15;
+}
+
+.orb-1 {
+  top: -10%;
+  right: 10%;
+  width: 400px;
+  height: 400px;
+  background: var(--gold-primary);
+}
+
+.orb-2 {
+  bottom: 20%;
+  left: -5%;
+  width: 500px;
+  height: 500px;
+  background: var(--cyan-accent);
+}
+
+/* ==========================================================================
+   HEADER / INTRO
+   ========================================================================== */
+header {
+  padding: 5rem 1rem 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.logo-wrapper {
+  position: relative;
+  margin-bottom: 2rem;
 }
 
 .logo {
-  width: 100px;
-  margin: 2rem auto 1rem;
+  width: 120px;
+  height: auto;
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.3));
+}
+
+.logo-pulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+  animation: pulse 3s infinite ease-in-out;
+  z-index: 1;
 }
 
 h1 {
-  color: #d4af37;
-  font-size: 2.5rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #ffffff 30%, var(--gold-glow) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   margin-bottom: 0.5rem;
+  letter-spacing: -1px;
 }
 
-p {
-  color: #ccc;
-  font-size: 1.1rem;
+.tagline {
+  color: var(--text-secondary);
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  font-weight: 300;
 }
 
-.header-buttons {
-  margin-bottom: 1.5rem;
-}
-
+/* Botones con Brillo */
 .btn {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.7rem 1.2rem;
-  background: #d4af37;
-  color: #000;
-  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 2rem;
+  border-radius: 12px;
+  font-weight: 600;
   text-decoration: none;
-  font-weight: bold;
-  transition: all 0.3s ease;
+  font-family: 'Space Grotesk', sans-serif;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
 }
 
-.btn:hover {
-  background: #e6c555;
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.04);
+  color: #fff;
+  border: 1px solid var(--border-light);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--gold-primary);
   transform: translateY(-2px);
 }
 
-/* Estilos de la barra del contrato */
+/* Caja de Contrato */
 .contract-container {
-  margin: 1.5rem auto;
-  max-width: 500px;
-  padding: 0 1rem;
+  margin-top: 2.5rem;
+  width: 100%;
+  max-width: 540px;
 }
 
 .contract-label {
-  font-size: 0.9rem;
-  color: #888;
-  margin-bottom: 0.3rem;
+  font-size: 0.85rem;
+  color: var(--cyan-accent);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 0.6rem;
+  font-weight: 700;
+  text-shadow: 0 0 10px var(--cyan-glow);
 }
 
 .contract-box {
-  background: #161616;
-  border: 1px solid #333;
-  padding: 0.6rem 1rem;
-  border-radius: 8px;
+  background: rgba(10, 10, 15, 0.9);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  padding: 0.8rem 1.2rem;
+  border-radius: 14px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 10px;
+  box-shadow: 0 10px 30px rgba(0, 229, 255, 0.05);
 }
 
 #contract-address {
-  font-family: monospace;
-  font-size: 0.85rem;
-  color: #f5c242;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9rem;
+  color: #fff;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  letter-spacing: 0.5px;
 }
 
 #btn-copy {
-  background: #262626;
-  color: #fff;
-  border: 1px solid #444;
-  padding: 0.4rem 0.8rem;
-  border-radius: 5px;
-  cursor: pointer;
+  background: var(--gold-primary);
+  color: #000;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
   font-weight: bold;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
+  font-family: 'Space Grotesk', sans-serif;
+  cursor: pointer;
   transition: all 0.2s ease;
 }
 
 #btn-copy:hover {
-  background: #d4af37;
-  color: #000;
-  border-color: #d4af37;
+  background: var(--gold-glow);
+  transform: scale(1.05);
 }
 
-/* Módulo de características */
+/* ==========================================================================
+   SECCIÓN CARACTERÍSTICAS (Glassmorphism)
+   ========================================================================== */
 .features {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
-  padding: 2rem 1rem;
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
 }
 
-.feature {
-  background: #1a1a1a;
-  padding: 2rem;
-  border-radius: 1rem;
-  width: 280px;
-  box-shadow: 0 0 15px rgba(212, 175, 55, 0.1);
+.feature-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  padding: 2.5rem 2rem;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  text-align: left;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.feature h3 {
-  color: #d4af37;
-  margin-top: 0;
+.feature-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 0%, rgba(0, 229, 255, 0.1) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
 }
 
-/* Estilos de Tokenomics */
+.feature-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(0, 229, 255, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 229, 255, 0.05);
+}
+
+.feature-card:hover .feature-glow {
+  opacity: 1;
+}
+
+.feature-icon {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.feature-card h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.35rem;
+  margin-bottom: 0.75rem;
+  color: #fff;
+}
+
+.feature-card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   TOKENOMICS
+   ========================================================================== */
 .tokenomics-section {
-  padding: 3rem 1rem;
-  background: #111;
-  border-top: 1px solid #1a1a1a;
-  border-bottom: 1px solid #1a1a1a;
+  padding: 6rem 1.5rem;
+  background: linear-gradient(180deg, transparent 0%, #0a0a0f 100%);
 }
 
-.tokenomics-section h2 {
-  color: #d4af37;
+.tokenomics-section h2, .how-to-buy-section h2, .roadmap-section h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
 }
 
 .section-subtitle {
-  color: #aaa;
-  margin-bottom: 2rem;
+  color: var(--text-secondary);
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.gold-text {
+  color: var(--gold-glow);
 }
 
 .tokenomics-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem;
-  max-width: 900px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
 .token-card {
-  background: #1a1a1a;
-  border-left: 4px solid #d4af37;
-  padding: 1.5rem;
-  border-radius: 8px;
-  width: 220px;
+  background: rgba(20, 20, 30, 0.5);
+  border: 1px solid var(--border-light);
+  padding: 2.5rem 2rem;
+  border-radius: 18px;
   text-align: left;
+  transition: all 0.3s ease;
 }
 
-.token-card h4 {
-  font-size: 2rem;
-  margin: 0;
-  color: #fff;
+.token-percentage {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--cyan-accent);
+  margin-bottom: 1rem;
 }
 
-.token-card p {
-  margin: 0.5rem 0 0;
-  font-size: 1rem;
+.featured-card {
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  background: rgba(212, 175, 55, 0.03);
+  transform: scale(1.03);
+}
+
+.featured-card .token-percentage {
+  color: var(--gold-glow);
 }
 
 .card-note {
   font-size: 0.8rem;
-  color: #888;
+  color: var(--gold-primary);
   display: block;
+  margin-top: 0.5rem;
 }
 
+/* Caja de Impuestos */
 .tax-box {
-  background: #161616;
-  border: 1px dashed #444;
-  max-width: 500px;
-  margin: 2rem auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: rgba(10, 10, 15, 0.8);
+  border: 1px solid var(--border-light);
+  max-width: 700px;
+  margin: 4rem auto 0;
+  padding: 1.5rem 2rem;
+  border-radius: 16px;
+  gap: 1.5rem;
+}
+
+.tax-item {
+  flex: 1;
+}
+
+.tax-badge {
+  display: inline-block;
+  background: rgba(212, 175, 55, 0.1);
+  color: var(--gold-glow);
+  padding: 0.3rem 1rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.tax-badge.cyan {
+  background: rgba(0, 229, 255, 0.1);
+  color: var(--cyan-accent);
+}
+
+.tax-line {
+  width: 1px;
+  height: 60px;
+  background: var(--border-light);
+}
+
+/* ==========================================================================
+   NUEVO CARRUSEL INTERACTIVO (Cómo comprar)
+   ========================================================================== */
+.how-to-buy-section {
+  padding: 6rem 1.5rem;
+  background: #07070a;
+}
+
+.carousel-container {
+  max-width: 650px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.carousel-track-container {
+  overflow: hidden;
+  border-radius: 24px;
+  border: 1px solid var(--border-light);
+  background: var(--bg-card);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(12px);
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+  width: 100%;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  flex-shrink: 0;
+}
+
+.slide-card {
+  padding: 3rem 2.5rem;
+  text-align: center;
+  position: relative;
+}
+
+.slide-num {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 5rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.02);
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  line-height: 1;
+}
+
+.slide-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.slide-card h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.slide-card p {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  margin-bottom: 1.25rem;
+}
+
+.slide-subtext {
+  font-size: 0.9rem !important;
+  color: var(--text-secondary);
+  opacity: 0.7;
+}
+
+.warning-alert {
+  background: rgba(255, 76, 76, 0.05);
+  border: 1px solid rgba(255, 76, 76, 0.2);
+  color: #ff8080;
   padding: 1rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  text-align: left;
+  margin-top: 1.5rem;
+}
+
+.text-link {
+  color: var(--cyan-accent);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--cyan-accent);
+}
+
+.contract-microbox {
+  background: #07070a;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  color: var(--gold-glow);
+  padding: 0.6rem;
   border-radius: 8px;
+  font-family: monospace;
+  font-size: 0.8rem;
+  word-break: break-all;
+  margin-bottom: 1rem;
 }
 
-.tax-box p {
-  margin: 0.5rem 0;
-  font-size: 0.95rem;
+/* Controles */
+.carousel-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  padding: 0 1rem;
 }
 
-/* Estilos de Roadmap */
+.carousel-btn {
+  background: rgba(255, 255, 255, 0.04);
+  color: #fff;
+  border: 1px solid var(--border-light);
+  padding: 0.6rem 1.2rem;
+  border-radius: 10px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.carousel-btn:hover {
+  background: var(--cyan-accent);
+  color: #000;
+  border-color: var(--cyan-accent);
+}
+
+.carousel-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-dot.active {
+  background: var(--cyan-accent);
+  transform: scale(1.3);
+  box-shadow: 0 0 10px var(--cyan-accent);
+}
+
+/* ==========================================================================
+   ROADMAP (Timeline Cibernética)
+   ========================================================================== */
 .roadmap-section {
-  padding: 4rem 1rem;
-}
-
-.roadmap-section h2 {
-  color: #d4af37;
-  margin-bottom: 2.5rem;
+  padding: 6rem 1.5rem;
 }
 
 .roadmap-timeline {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  max-width: 600px;
+  gap: 2.5rem;
+  max-width: 650px;
   margin: 0 auto;
-  text-align: left;
-}
-
-.roadmap-step {
-  background: #161616;
-  padding: 1.5rem;
-  border-radius: 10px;
-  border: 1px solid #222;
   position: relative;
 }
 
+/* Línea vertical de fondo del timeline */
+.roadmap-timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 20px;
+  width: 2px;
+  height: 100%;
+  background: var(--border-light);
+  z-index: 1;
+}
+
+.roadmap-step {
+  background: var(--bg-card);
+  padding: 2rem 2rem 2rem 3rem;
+  border-radius: 16px;
+  border: 1px solid var(--border-light);
+  position: relative;
+  z-index: 2;
+  text-align: left;
+}
+
+/* Círculo indicador en el timeline */
+.roadmap-step::before {
+  content: '';
+  position: absolute;
+  left: 14px;
+  top: 2.2rem;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #333;
+  border: 3px solid var(--bg-dark);
+}
+
 .step-badge {
-  background: #262626;
-  color: #d4af37;
-  padding: 0.2rem 0.6rem;
-  font-size: 0.8rem;
-  font-weight: bold;
-  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-secondary);
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 6px;
   display: inline-block;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
+  font-family: 'Space Grotesk', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .roadmap-step h4 {
-  margin: 0 0 0.5rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
   color: #fff;
-  font-size: 1.2rem;
 }
 
 .roadmap-step p {
-  margin: 0;
+  color: var(--text-secondary);
   font-size: 0.95rem;
-  color: #aaa;
-  line-height: 1.4;
 }
 
 .status-tag {
   display: inline-block;
   margin-top: 1rem;
   font-size: 0.8rem;
-  font-weight: bold;
+  font-weight: 700;
+  font-family: 'Space Grotesk', sans-serif;
 }
 
-.completed { border-left: 4px solid #28a745; }
-.completed .status-tag { color: #28a745; }
+/* Variaciones de estados */
+.completed { border-left: 4px solid #00ff66; }
+.completed::before { background: #00ff66; box-shadow: 0 0 10px #00ff66; }
+.completed .status-tag { color: #00ff66; }
 
-.current { border-left: 4px solid #f5c242; box-shadow: 0 0 15px rgba(245, 194, 66, 0.1); }
-.current .status-tag { color: #f5c242; }
+.current { 
+  border-left: 4px solid var(--gold-primary); 
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.05); 
+}
+.current::before { background: var(--gold-primary); box-shadow: 0 0 10px var(--gold-primary); }
+.current .status-tag { color: var(--gold-glow); }
+.current .step-badge { color: var(--gold-glow); background: rgba(212, 175, 55, 0.1); }
 
-.upcoming { border-left: 4px solid #555; }
-.upcoming .status-tag { color: #777; }
+.upcoming { border-left: 4px solid #333; }
+.upcoming .status-tag { color: #555; }
 
-/* Sección de Llamada a la Acción (Compra) */
+/* ==========================================================================
+   CALL TO ACTION FINAL
+   ========================================================================== */
 .cta-section {
-  background: linear-gradient(135deg, #111 0%, #1a160b 100%);
-  padding: 3.5rem 1rem;
-  border-top: 1px solid #222;
+  padding: 6rem 1.5rem;
+  background: linear-gradient(180deg, #07070a 0%, #0a0e1a 100%);
 }
 
-.cta-section h3 {
+.cta-glass {
+  background: radial-gradient(circle at top left, rgba(212, 175, 55, 0.05), rgba(0, 229, 255, 0.03));
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  border-radius: 28px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+  backdrop-filter: blur(10px);
+}
+
+.cta-glass h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2.2rem;
   color: #fff;
-  font-size: 1.6rem;
-  margin: 0;
+  margin-bottom: 0.5rem;
 }
 
 .btn-buy {
-  background: #f5c242;
-  font-size: 1.1rem;
-  padding: 0.9rem 2rem;
-  margin-top: 1.5rem;
-  box-shadow: 0 4px 15px rgba(245, 194, 66, 0.3);
+  background: var(--gold-primary);
+  color: #000;
+  font-size: 1.15rem;
+  padding: 1rem 2.5rem;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.25);
+  border: none;
+  margin-top: 2rem;
 }
 
 .btn-buy:hover {
-  background: #fff;
-  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.4);
+  background: var(--gold-glow);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(212, 175, 55, 0.4);
 }
 
-/* Redes Sociales */
+/* ==========================================================================
+   FOOTER Y SOCIALS
+   ========================================================================== */
+footer {
+  padding: 4rem 1.5rem;
+  background: #040406;
+  border-top: 1px solid var(--border-light);
+}
+
 .social-links {
   display: flex;
   justify-content: center;
-  gap: 25px;
-  margin-top: 50px;
-  margin-bottom: 20px;
+  gap: 2rem;
+  margin-bottom: 2rem;
 }
 
 .social-links a {
-  color: #f5c242;
+  color: var(--text-secondary);
   text-decoration: none;
   font-weight: 600;
-  font-size: 16px;
-  transition: color 0.3s ease;
+  font-family: 'Space Grotesk', sans-serif;
+  transition: all 0.2s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-light);
 }
 
 .social-links a:hover {
-  color: #ffffff;
-  text-shadow: 0 0 10px rgba(245, 194, 66, 0.5);
+  color: var(--cyan-accent);
+  background: var(--cyan-glow);
+  border-color: var(--cyan-accent);
 }
 
-footer {
-  padding: 2rem;
-  font-size: 0.9rem;
-  color: #888;
-  border-top: 1px solid #111;
+.copyright {
+  font-size: 0.85rem;
+  color: #555860;
 }
 
-footer a {
-  color: #888;
+.copyright a {
+  color: #555860;
   text-decoration: none;
 }
 
-footer a:hover {
-  color: #d4af37;
+.copyright a:hover {
+  color: var(--gold-primary);
+}
+
+/* ==========================================================================
+   ANIMACIONES
+   ========================================================================== */
+@keyframes pulse {
+  0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.5; }
+  50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.8; }
+  100% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.5; }
+}
+
+/* Ajustes Responsive */
+@media (max-width: 768px) {
+  h1 { font-size: 2.5rem; }
+  .tokenomics-grid { grid-template-columns: 1fr; }
+  .featured-card { transform: scale(1); }
+  .tax-box { flex-direction: column; gap: 1rem; }
+  .tax-line { width: 100%; height: 1px; }
+  .slide-card { padding: 2rem 1.5rem; }
+  .roadmap-timeline::before { left: 15px; }
+  .roadmap-step { padding-left: 2rem; }
+  .roadmap-step::before { left: 9px; }
 }
