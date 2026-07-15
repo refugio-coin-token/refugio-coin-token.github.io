@@ -3,113 +3,231 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RefugioCoin</title>
+  <title>RefugioCoin - Tu defensa financiera</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" type="image/png" href="assets/Logo rfg.png">
+  <!-- Fuente moderna Cyberpunk/Futurista -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
+  <!-- Fondo dinámico con partículas cibernéticas sutiles -->
+  <div class="cyber-grid"></div>
+  <div class="glow-orb orb-1"></div>
+  <div class="glow-orb orb-2"></div>
   
   <header>
-    <img src="assets/ChatGPT Image 5 may 2025, 21_14_13.png" alt="RefugioCoin Logo" class="logo" />
-    <h1>RefugioCoin</h1>
-    <p>Tu defense financiera en tiempos de crisis.</p>
-    <div class="header-buttons">
-      <a href="./Whitepaper_Refugio_Coin(RFG).pdf" class="btn" target="_blank">📄 Whitepaper</a>
-    </div>
+    <div class="header-content">
+      <div class="logo-wrapper">
+        <img src="assets/ChatGPT Image 5 may 2025, 21_14_13.png" alt="RefugioCoin Logo" class="logo" />
+        <div class="logo-pulse"></div>
+      </div>
+      <h1>RefugioCoin</h1>
+      <p class="tagline">Tu defensa financiera en tiempos de crisis</p>
+      
+      <div class="header-buttons">
+        <a href="./Whitepaper_Refugio_Coin(RFG).pdf" class="btn btn-secondary" target="_blank">
+          <span class="btn-icon">📄</span> Whitepaper
+        </a>
+      </div>
 
-    <div class="contract-container">
-      <p class="contract-label">Contrato Oficial (BSC):</p>
-      <div class="contract-box">
-        <span id="contract-address">0xaA56277974856D221393EB9783dd0b07af7de4d1</span>
-        <button id="btn-copy" onclick="copyContract()">📋 Copiar</button>
+      <div class="contract-container">
+        <p class="contract-label">🛡️ Contrato Oficial Verificado (BSC)</p>
+        <div class="contract-box">
+          <span id="contract-address">0xaA56277974856D221393EB9783dd0b07af7de4d1</span>
+          <button id="btn-copy" onclick="copyContract()">📋 Copiar</button>
+        </div>
       </div>
     </div>
   </header>
 
+  <!-- Características destacadas con estilo Cyber-Shield -->
   <section class="features">
-    <div class="feature">
+    <div class="feature-card">
+      <div class="feature-glow"></div>
+      <div class="feature-icon">🛡️</div>
       <h3>Refugio ante la crisis</h3>
-      <p>Protege tu valor ante guerras, colapsos y emergencias globales.</p>
+      <p>Protege tu valor ante guerras, colapsos y emergencias globales mediante una reserva descentralizada.</p>
     </div>
-    <div class="feature">
-      <h3>Impuestos & quema inteligente</h3>
-      <p>Sistema con baja fricción y deflación programada.</p>
+    <div class="feature-card">
+      <div class="feature-glow"></div>
+      <div class="feature-icon">🔥</div>
+      <h3>Impuestos & Quema</h3>
+      <p>Sistema deflacionario programado con baja fricción para asegurar la escasez del activo.</p>
     </div>
-    <div class="feature">
-      <h3>Gobernanza comunitaria</h3>
-      <p>Decisiones descentralizadas desde el segundo año.</p>
+    <div class="feature-card">
+      <div class="feature-glow"></div>
+      <div class="feature-icon">👥</div>
+      <h3>Gobernanza Real</h3>
+      <p>Decisiones comunitarias 100% descentralizadas sobre el destino del fondo común a partir del año 2.</p>
     </div>
   </section>
 
+  <!-- Tokenomics optimizado -->
   <section class="tokenomics-section">
-    <h2>Distribución y Tokenomics</h2>
-    <p class="section-subtitle">Suministro Total Fijo: <strong>100.000.000 $RFG</strong></p>
-    
-    <div class="tokenomics-grid">
-      <div class="token-card">
-        <h4>50%</h4>
-        <p>Mercado Libre & Liquidez</p>
+    <div class="container">
+      <h2>Distribución y Tokenomics</h2>
+      <p class="section-subtitle">Suministro Fijo Inmutable: <strong class="gold-text">100.000.000 $RFG</strong></p>
+      
+      <div class="tokenomics-grid">
+        <div class="token-card">
+          <div class="token-percentage">50%</div>
+          <h4>Mercado Libre & Liquidez</h4>
+          <p>Destinado al intercambio público y pools del ecosistema.</p>
+        </div>
+        <div class="token-card featured-card">
+          <div class="token-percentage">30%</div>
+          <h4>Bóveda de Reserva</h4>
+          <p>Reserva blindada. <span class="gold-text">Quema sistemática del 10% anual</span> para empujar el valor.</p>
+        </div>
+        <div class="token-card">
+          <div class="token-percentage">20%</div>
+          <h4>Desarrollo & Marketing</h4>
+          <p>Presupuesto exclusivo para expansión tecnológica e infraestructura.</p>
+        </div>
       </div>
-      <div class="token-card">
-        <h4>30%</h4>
-        <p>Wallet de Reserva</p>
-        <span class="card-note">(Quema del 10% anual)</span>
-      </div>
-      <div class="token-card">
-        <h4>20%</h4>
-        <p>Wallet de Desarrollo</p>
-      </div>
-    </div>
 
-    <div class="tax-box">
-      <p><strong>⚡ Operaciones en DEX (PancakeSwap):</strong> 0% Impuestos</p>
-      <p><strong>🔄 Transacciones P2P Directas:</strong> 0.8% de respaldo sostenible</p>
+      <div class="tax-box">
+        <div class="tax-item">
+          <span class="tax-badge">0% Impuesto</span>
+          <p><strong>Operaciones en DEX (PancakeSwap)</strong></p>
+        </div>
+        <div class="tax-line"></div>
+        <div class="tax-item">
+          <span class="tax-badge cyan">0.8% Sostenible</span>
+          <p><strong>Transacciones P2P Directas</strong></p>
+        </div>
+      </div>
     </div>
   </section>
 
+  <!-- Carrusel Vanguardista: Guía de Compra (Opción A) -->
+  <section class="how-to-buy-section">
+    <h2>¿Cómo comprar $RFG?</h2>
+    <p class="section-subtitle">Sigue esta guía paso a paso interactiva para entrar al refugio de forma segura</p>
+    
+    <div class="carousel-container">
+      <div class="carousel-track-container">
+        <div class="carousel-track" id="carouselTrack">
+          
+          <!-- Paso 1 -->
+          <div class="carousel-slide">
+            <div class="slide-card">
+              <div class="slide-num">01</div>
+              <div class="slide-icon">🦊</div>
+              <h3>Prepara tu Billetera</h3>
+              <p>Descarga e instala <strong>MetaMask</strong> o <strong>Trust Wallet</strong> en tu navegador o móvil.</p>
+              <div class="warning-alert">
+                <strong>⚠️ REGLA DE ORO:</strong> Guarda tus 12 palabras de recuperación en papel y fuera de internet. ¡No se las des a nadie!
+              </div>
+            </div>
+          </div>
+
+          <!-- Paso 2 -->
+          <div class="carousel-slide">
+            <div class="slide-card">
+              <div class="slide-num">02</div>
+              <div class="slide-icon">🪙</div>
+              <h3>Consigue BNB</h3>
+              <p>El token $RFG opera sobre la red BNB Chain. Compra BNB en exchanges como Binance, Bybit o KuCoin.</p>
+              <p class="slide-subtext">Retira el BNB a tu wallet seleccionando estrictamente la red <strong>BNB Smart Chain (BEP20)</strong>.</p>
+            </div>
+          </div>
+
+          <!-- Paso 3 -->
+          <div class="carousel-slide">
+            <div class="slide-card">
+              <div class="slide-num">03</div>
+              <div class="slide-icon">🥞</div>
+              <h3>Conéctate a PancakeSwap</h3>
+              <p>Entra al exchange descentralizado oficial <a href="https://pancakeswap.finance" target="_blank" class="text-link">PancakeSwap.finance</a>.</p>
+              <p class="slide-subtext">Pulsa en <strong>"Connect Wallet"</strong> arriba a la derecha y asegúrate de tener seleccionada la red BNB Smart Chain.</p>
+            </div>
+          </div>
+
+          <!-- Paso 4 -->
+          <div class="carousel-slide">
+            <div class="slide-card">
+              <div class="slide-num">04</div>
+              <div class="slide-icon">🔄</div>
+              <h3>Canjea tus BNB por $RFG</h3>
+              <p>En PancakeSwap, selecciona cambiar <strong>BNB</strong> por el token $RFG pegando la dirección oficial:</p>
+              <div class="contract-microbox">0xaA56277974856D221393EB9783dd0b07af7de4d1</div>
+              <p class="slide-subtext">Importa el token, introduce la cantidad que desees adquirir y confirma la transacción.</p>
+            </div>
+          </div>
+
+          <!-- Paso 5 -->
+          <div class="carousel-slide">
+            <div class="slide-card">
+              <div class="slide-num">05</div>
+              <div class="slide-icon">✨</div>
+              <h3>¡Importa tus Tokens!</h3>
+              <p>Si no ves tus tokens comprados de forma inmediata en tu MetaMask, no te asustes. Solo debes agregarlo manualmente.</p>
+              <p class="slide-subtext">Haz clic en <strong>"Importar Tokens"</strong> en tu wallet, pega el contrato oficial de arriba y el balance aparecerá al instante.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Controles del carrusel -->
+      <div class="carousel-controls">
+        <button class="carousel-btn btn-prev" id="prevBtn">← Anterior</button>
+        <div class="carousel-dots" id="carouselDots"></div>
+        <button class="carousel-btn btn-next" id="nextBtn">Siguiente →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Roadmap estilizado -->
   <section class="roadmap-section">
     <h2>Hoja de Ruta (Roadmap)</h2>
     <div class="roadmap-timeline">
       <div class="roadmap-step completed">
         <div class="step-badge">Fase 1</div>
         <h4>Lanzamiento Primario</h4>
-        <p>Despliegue del contrato en BNB Smart Chain, verificación de código en BscScan y creación de la pool inicial.</p>
+        <p>Despliegue del contrato en la BNB Smart Chain, verificación de código e inicio del protocolo de pools.</p>
         <span class="status-tag">✓ Completado</span>
       </div>
       
       <div class="roadmap-step current">
         <div class="step-badge">Fase 2</div>
-        <h4>Seguridad comunitaria (Próximos 3 meses)</h4>
-        <p>Bloqueo programado de liquidez por estabilidad, auditorías automatizadas y apertura oficial de redes sociales.</p>
+        <h4>Seguridad Comunitaria</h4>
+        <p>Bloqueo total de liquidez en Mudra Locker por 3 años, auditoría de seguridad y diversificación en wallets de reserva.</p>
         <span class="status-tag">En progreso</span>
       </div>
 
       <div class="roadmap-step upcoming">
         <div class="step-badge">Fase 3</div>
-        <h4>Consolidación y Quema (Próximos 6 meses)</h4>
-        <p>Activación del primer ciclo de quema automatizada sobre la reserva y despliegue del sistema de gobernanza P2P.</p>
+        <h4>Gobernanza y Deflación</h4>
+        <p>Activación del primer evento anual de quema sobre la reserva (10%) y despliegue del sistema de toma de decisiones descentralizado.</p>
         <span class="status-tag">Próximamente</span>
       </div>
     </div>
   </section>
 
+  <!-- Llamada a la acción final -->
   <section class="cta-section">
-    <h3>¿Listo para proteger tu capital?</h3>
-    <p>Adquiere tus tokens de forma segura a través del par oficial en PancakeSwap.</p>
-    <a href="https://pancakeswap.finance/swap?outputCurrency=0xaA56277974856D221393EB9783dd0b07af7de4d1" class="btn btn-buy" target="_blank">🛒 Adquirir $RFG en PancakeSwap</a>
+    <div class="cta-glass">
+      <h3>¿Listo para proteger tu capital?</h3>
+      <p>Adquiere tus tokens $RFG de forma descentralizada y segura en el par oficial.</p>
+      <a href="https://pancakeswap.finance/swap?outputCurrency=0xaA56277974856D221393EB9783dd0b07af7de4d1" class="btn btn-buy" target="_blank">
+        🛒 Comprar $RFG en PancakeSwap
+      </a>
+    </div>
   </section>
 
-  <div class="social-links">
-    <a href="https://github.com/refugio-coin-token" target="_blank">GitHub</a>
-    <a href="https://www.tiktok.com/@refugiocoin" target="_blank">TikTok</a>
-    <a href="https://www.instagram.com/refugiocoin?igsh=MTJ4YTU1b3Y2eGZwdg==" target="_blank">Instagram</a>
-  </div>
-
+  <!-- Redes Sociales y Footer -->
   <footer>
-    <p>&copy; 2025 RefugioCoin • <a href="mailto:refugio.coin.token@gmail.com">refugio.coin.token@gmail.com</a></p>
+    <div class="social-links">
+      <a href="https://github.com/refugio-coin-token" target="_blank">👾 GitHub</a>
+      <a href="https://www.tiktok.com/@refugiocoin" target="_blank">🎵 TikTok</a>
+      <a href="https://www.instagram.com/refugiocoin?igsh=MTJ4YTU1b3Y2eGZwdg==" target="_blank">📸 Instagram</a>
+    </div>
+    <p class="copyright">&copy; 2026 RefugioCoin • <a href="mailto:refugio.coin.token@gmail.com">refugio.coin.token@gmail.com</a></p>
   </footer>
 
   <script src="script.js"></script>
 </body>
 </html>
-
