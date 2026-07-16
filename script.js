@@ -23,7 +23,7 @@ function copyContract() {
 }
 
 // ==========================================================================
-// MOTOR DEL CARRUSEL (Guía de compra Paso a Paso)
+// MOTOR DEL CARRUSEL (Guía de compra Paso a Paso con Soporte Táctil)
 // ==========================================================================
 document.addEventListener("DOMContentLoaded", () => {
   const track = document.getElementById("carouselTrack");
@@ -85,6 +85,36 @@ document.addEventListener("DOMContentLoaded", () => {
       moveToSlide(currentIndex - 1);
     }
   });
+
+  // ==========================================================================
+  // DETECCIÓN DE GESTOS TÁCTILES (SWIPE) PARA MÓVILES
+  // ==========================================================================
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  track.addEventListener("touchstart", (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  track.addEventListener("touchend", (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+  }, { passive: true });
+
+  const handleSwipe = () => {
+    const swipeThreshold = 50; // Distancia mínima en píxeles para deslizar
+    if (touchStartX - touchEndX > swipeThreshold) {
+      // Deslizar hacia la izquierda -> Siguiente diapositiva
+      if (currentIndex < slides.length - 1) {
+        moveToSlide(currentIndex + 1);
+      }
+    } else if (touchEndX - touchStartX > swipeThreshold) {
+      // Deslizar hacia la derecha -> Diapositiva anterior
+      if (currentIndex > 0) {
+        moveToSlide(currentIndex - 1);
+      }
+    }
+  };
 
   // Inicializar estado de botones
   updateButtonsState();
