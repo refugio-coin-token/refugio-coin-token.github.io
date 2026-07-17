@@ -20,9 +20,9 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 75vw;
-  max-width: 900px;
-  height: 75vh;
+  width: 90vw; /* Ajuste para que no sea más grande que la pantalla */
+  max-width: 800px;
+  height: 90vh;
   background-image: url('logoSvg.svg');
   background-repeat: no-repeat;
   background-position: center;
@@ -39,13 +39,11 @@
   padding: 0;
 }
 
-body {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  background: var(--bg-dark);
-  color: var(--text-primary);
-  overflow-x: hidden;
-  position: relative;
-  line-height: 1.6;
+body, html {
+  overflow-x: hidden; 
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 /* Efectos de fondo cibernéticos */
@@ -95,9 +93,17 @@ header {
   padding: 4rem 1rem 3rem;
   display: flex;
   flex-direction: column;
+  align-items: center; /* Centra horizontalmente */
+  text-align: center;
+  width: 100%;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  position: relative;
+  width: 100%;
+  max-width: 600px; /* Asegura que el contenido no se estire demasiado en escritorio */
 }
 
 .logo-wrapper {
