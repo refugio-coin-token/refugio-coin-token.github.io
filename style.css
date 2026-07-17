@@ -12,6 +12,26 @@
   --text-primary: #f0f0f5;
   --text-secondary: #9aa0b0;
 }
+/* ==========================================================================
+   MARCA DE AGUA DE FONDO
+   ========================================================================== */
+.bg-watermark {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75vw;
+  max-width: 900px;
+  height: 75vh;
+  background-image: url('logoSvg.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.05;
+  z-index: -3;
+  pointer-events: none;
+}
+
 
 * {
   box-sizing: border-box;
