@@ -848,3 +848,43 @@ footer {
     font-size: 1.8rem;
   }
 }
+
+/* ==========================================================================
+   ⚠️ PARCHE DE CORRECCIÓN DE VISIBILIDAD PARA MÓVIL
+   ========================================================================== */
+
+/* 1. Forzar que todos los títulos principales sean blancos y visibles */
+h2, 
+.tokenomics-section h2, 
+.how-to-buy-section h2, 
+.roadmap-section h2 {
+  color: #ffffff !important;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+/* 2. Forzar que los títulos secundarios y subtítulos mantengan su color */
+h3, h4, .slide-card h3 {
+  color: #ffffff !important;
+}
+
+.section-subtitle {
+  color: #9aa0b0 !important;
+}
+
+.gold-text, strong {
+  color: #f5c242 !important; /* Asegura el toque dorado premium */
+}
+
+/* 3. Blindar el fondo oscuro absoluto y fulminar el escudo blanco gigante */
+body, .how-to-buy-section, .tokenomics-section, .roadmap-section {
+  background-color: #07070a !important;
+  background-image: none !important; /* Esto remueve el escudo gigante brillante si se metió como fondo */
+}
+
+/* 4. Asegurar la lectura en las tarjetas del carrusel */
+.slide-card p {
+  color: #9aa0b0 !important;
+}
+.warning-alert {
+  color: #ff8080 !important;
+}
