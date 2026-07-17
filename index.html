@@ -100,8 +100,133 @@
     </div>
   </section>
 
-  <!-- Secciones restantes (Carrusel, Roadmap, Footer...) mantienen su estructura igual -->
-  <!-- ... (El resto del contenido HTML permanece idéntico para no truncar tu web) ... -->
+
+  <!-- Carrusel Vanguardista: Guía de Compra (Opción A) -->
+  <section class="how-to-buy-section">
+    <h2>¿Cómo comprar $RFG?</h2>
+    <p class="section-subtitle">Sigue esta guía paso a paso interactiva para entrar al refugio de forma segura</p>
+    
+    <div class="carousel-container">
+      <div class="carousel-track-container">
+        <div class="carousel-track" id="carouselTrack">
+          
+          <!-- Paso 1 -->
+          <div class="carousel-slide">
+            <div class="slide-card">
+              <div class="slide-num">01</div>
+              <div class="slide-icon">🦊</div>
+              <h3>Prepara tu Billetera</h3>
+              <p>Descarga e instala <strong>MetaMask</strong> o <strong>Trust Wallet</strong> en tu navegador o móvil.</p>
+              <div class="warning-alert">
+                <strong>⚠️ REGLA DE ORO:</strong> Guarda tus 12 palabras de recuperación en papel y fuera de internet. ¡No se las des a nadie!
+              </div>
+            </div>
+          </div>
+
+          <!-- Paso 2 -->
+          <div class="carousel-slide">
+            <div class="slide-card">
+              <div class="slide-num">02</div>
+              <div class="slide-icon">🪙</div>
+              <h3>Consigue BNB</h3>
+              <p>El token $RFG opera sobre la red BNB Chain. Compra BNB en exchanges como Binance, Bybit o KuCoin.</p>
+              <p class="slide-subtext">Retira el BNB a tu wallet seleccionando estrictamente la red <strong>BNB Smart Chain (BEP20)</strong>.</p>
+            </div>
+          </div>
+
+          <!-- Paso 3 -->
+          <div class="carousel-slide">
+            <div class="slide-card">
+              <div class="slide-num">03</div>
+              <div class="slide-icon">🥞</div>
+              <h3>Conéctate a PancakeSwap</h3>
+              <p>Entra al exchange descentralizado oficial <a href="https://pancakeswap.finance" target="_blank" class="text-link">PancakeSwap.finance</a>.</p>
+              <p class="slide-subtext">Pulsa en <strong>"Connect Wallet"</strong> arriba a la derecha y asegúrate de tener seleccionada la red BNB Smart Chain.</p>
+            </div>
+          </div>
+
+          <!-- Paso 4 -->
+          <div class="carousel-slide">
+            <div class="slide-card">
+              <div class="slide-num">04</div>
+              <div class="slide-icon">🔄</div>
+              <h3>Canjea tus BNB por $RFG</h3>
+              <p>En PancakeSwap, selecciona cambiar <strong>BNB</strong> por el token $RFG pegando la dirección oficial:</p>
+              <div class="contract-microbox">0xaA56277974856D221393EB9783dd0b07af7de4d1</div>
+              <p class="slide-subtext">Importa el token, introduce la cantidad que desees adquirir y confirma la transacción.</p>
+            </div>
+          </div>
+
+          <!-- Paso 5 -->
+          <div class="carousel-slide">
+            <div class="slide-card">
+              <div class="slide-num">05</div>
+              <div class="slide-icon">✨</div>
+              <h3>¡Importa tus Tokens!</h3>
+              <p>Si no ves tus tokens comprados de forma inmediata en tu MetaMask, no te asustes. Solo debes agregarlo manualmente.</p>
+              <p class="slide-subtext">Haz clic en <strong>"Importar Tokens"</strong> en tu wallet, pega el contrato oficial de arriba y el balance aparecerá al instante.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Controles del carrusel -->
+      <div class="carousel-controls">
+        <button class="carousel-btn btn-prev" id="prevBtn">← Anterior</button>
+        <div class="carousel-dots" id="carouselDots"></div>
+        <button class="carousel-btn btn-next" id="nextBtn">Siguiente →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Roadmap estilizado -->
+  <section class="roadmap-section">
+    <h2>Hoja de Ruta (Roadmap)</h2>
+    <div class="roadmap-timeline">
+      <div class="roadmap-step completed">
+        <div class="step-badge">Fase 1</div>
+        <h4>Lanzamiento Primario</h4>
+        <p>Despliegue del contrato en la BNB Smart Chain, verificación de código e inicio del protocolo de pools.</p>
+        <span class="status-tag">✓ Completado</span>
+      </div>
+      
+      <div class="roadmap-step current">
+        <div class="step-badge">Fase 2</div>
+        <h4>Seguridad Comunitaria</h4>
+        <p>Bloqueo total de liquidez en Mudra Locker por 3 años, auditoría de seguridad y diversificación en wallets de reserva.</p>
+        <span class="status-tag">En progreso</span>
+      </div>
+
+      <div class="roadmap-step upcoming">
+        <div class="step-badge">Fase 3</div>
+        <h4>Gobernanza y Deflación</h4>
+        <p>Activación del primer evento anual de quema sobre la reserva (10%) y despliegue del sistema de toma de decisiones descentralizado.</p>
+        <span class="status-tag">Próximamente</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Llamada a la acción final -->
+  <section class="cta-section">
+    <div class="cta-glass">
+      <h3>¿Listo para proteger tu capital?</h3>
+      <p>Adquiere tus tokens $RFG de forma descentralizada y segura en el par oficial.</p>
+      <a href="https://pancakeswap.finance/swap?outputCurrency=0xaA56277974856D221393EB9783dd0b07af7de4d1" class="btn btn-buy" target="_blank">
+        🛒 Comprar $RFG en PancakeSwap
+      </a>
+    </div>
+  </section>
+
+  <!-- Redes Sociales y Footer -->
+  <footer>
+    <div class="social-links">
+      <a href="https://github.com/refugio-coin-token" target="_blank">👾 GitHub</a>
+      <a href="https://www.tiktok.com/@refugiocoin" target="_blank">🎵 TikTok</a>
+      <a href="https://www.instagram.com/refugiocoin?igsh=MTJ4YTU1b3Y2eGZwdg==" target="_blank">📸 Instagram</a>
+    </div>
+    <p class="copyright">&copy; 2026 RefugioCoin • <a href="mailto:refugio.coin.token@gmail.com">refugio.coin.token@gmail.com</a></p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
