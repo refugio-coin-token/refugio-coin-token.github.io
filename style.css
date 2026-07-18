@@ -888,3 +888,49 @@ body, .how-to-buy-section, .tokenomics-section, .roadmap-section {
 .warning-alert {
   color: #ff8080 !important;
 }
+.dashboard-section {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  max-width: 900px;
+  margin: 20px auto;
+}
+
+.dash-card {
+  background: rgba(25, 25, 30, 0.8);
+  border: 1px solid #333;
+  padding: 20px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  transition: 0.3s;
+}
+
+.dash-card:hover {
+  border-color: #f5c242;
+  box-shadow: 0 0 15px rgba(245, 194, 66, 0.2);
+}
+
+.dash-label {
+  color: #9aa0b0;
+  font-size: 0.8rem;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.dash-value {
+  color: #ffffff;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.dash-value-green {
+  color: #00ff88;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
