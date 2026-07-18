@@ -259,5 +259,29 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+  async function actualizarDashboard() {
+    try {
+      // Llamada a la API pública de GeckoTerminal usando tu contrato
+      const respuesta = await fetch('https://api.geckoterminal.com/api/v2/networks/bsc/tokens/0xaA56277974856D221393EB9783dd0b07af7de4d1');
+      const datos = await respuesta.json();
+      
+      // Extraer las métricas del JSON recibido
+      const precio = datos.data.attributes.price_usd;
+      const mcap = datos.data.attributes.fdv_usd; // Valoración Totalmente Diluida (Suministro Fijo)
+
+      // Insertar los datos reales en las tarjetas de tu web automáticamente
+      document.getElementById('price-data').innerText = `$${parseFloat(precio).toFixed(6)}`;
+      document.getElementById('mcap-data').innerText = `$${Math.round(mcap).toLocaleString()}`;
+      
+    } catch (error) {
+      console.log("Error al conectar con la API de GeckoTerminal:", error);
+    }
+  }
+
+  // Ejecutar la función nada más cargar la página
+  actualizarDashboard();
+</script>
+
 </body>
 </html>
