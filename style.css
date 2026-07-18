@@ -888,49 +888,71 @@ body, .how-to-buy-section, .tokenomics-section, .roadmap-section {
 .warning-alert {
   color: #ff8080 !important;
 }
+/* ==========================================================================
+   📊 DASHBOARD TOTALMENTE OPTIMIZADO Y VISIBLE PARA MÓVIL
+   ========================================================================== */
+
 .dashboard-section {
   padding: 40px 20px;
   text-align: center;
+  background-color: #07070a !important; /* Forzar fondo cyber oscuro */
 }
 
+/* Forzar que el título del Dashboard sea blanco */
+.dashboard-section h2 {
+  color: #ffffff !important;
+  margin-bottom: 25px;
+}
+
+/* Corrección de la cuadrícula para pantallas pequeñas */
 .dashboard-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-  max-width: 900px;
-  margin: 20px auto;
+  display: flex !important;
+  flex-direction: column !important; /* Se apilan ordenadamente en el móvil */
+  gap: 15px;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
+/* Si la pantalla es más grande (PC/Tablet), se ponen en fila */
+@media (min-width: 768px) {
+  .dashboard-grid {
+    flex-direction: row !important;
+    max-width: 900px;
+  }
+}
+
+/* Tarjetas blindadas con fondo gris cibernético */
 .dash-card {
-  background: rgba(25, 25, 30, 0.8);
-  border: 1px solid #333;
+  background: #13131a !important; 
+  border: 1px solid #22222a !important;
   padding: 20px;
   border-radius: 12px;
-  display: flex;
-  flex-direction: column;
-  transition: 0.3s;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-.dash-card:hover {
-  border-color: #f5c242;
-  box-shadow: 0 0 15px rgba(245, 194, 66, 0.2);
-}
-
+/* Forzar el color gris claro para las etiquetas */
 .dash-label {
-  color: #9aa0b0;
-  font-size: 0.8rem;
-  margin-bottom: 8px;
+  color: #9aa0b0 !important;
+  font-size: 0.85rem !important;
+  margin-bottom: 6px;
   text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
+/* Forzar el color blanco brillante para los valores numéricos */
 .dash-value {
-  color: #ffffff;
-  font-size: 1.4rem;
-  font-weight: bold;
+  color: #ffffff !important;
+  font-size: 1.5rem !important;
+  font-weight: bold !important;
 }
 
+/* Forzar el color verde neón para el estado de la auditoría */
 .dash-value-green {
-  color: #00ff88;
-  font-size: 1.4rem;
-  font-weight: bold;
+  color: #00ff88 !important;
+  font-size: 1.5rem !important;
+  font-weight: bold !important;
 }
