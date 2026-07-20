@@ -670,6 +670,59 @@ h1 {
 
 .upcoming { border-left: 4px solid #333; }
 .upcoming .status-tag { color: #555; }
+/* --- ESTILOS CORRECTORES PARA EL ROADMAP --- */
+.roadmap-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+  margin: 2rem auto;
+  max-width: 800px;
+}
+
+.roadmap-step {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 1.5rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Colores Dinámicos Estructurales */
+.roadmap-step.fase-completada {
+  border-color: #00ff88;
+  background: rgba(0, 255, 136, 0.02);
+}
+.roadmap-step.fase-completada .status-tag {
+  color: #00ff88;
+  font-weight: bold;
+}
+.roadmap-step.fase-completada .step-badge {
+  background: #00ff88;
+  color: #000;
+}
+
+.roadmap-step.fase-progreso {
+  border-color: #ffaa00;
+  background: rgba(255, 170, 0, 0.02);
+}
+.roadmap-step.fase-progreso .status-tag {
+  color: #ffaa00;
+  font-weight: bold;
+}
+.roadmap-step.fase-progreso .step-badge {
+  background: #ffaa00;
+  color: #000;
+}
+
+.roadmap-step.fase-espera {
+  border-color: rgba(255, 255, 255, 0.1);
+  opacity: 0.6;
+}
+.roadmap-step.fase-espera .status-tag {
+  color: #888;
+}
 
 
  /* ==========================================================================
