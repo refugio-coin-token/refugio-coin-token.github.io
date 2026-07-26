@@ -143,6 +143,60 @@ h1 {
   letter-spacing: -1px;
   text-align: center;
 }
+.burn-banner {
+  background: linear-gradient(135deg, #181a20 0%, #1a120b 100%);
+  border: 1px solid #ff6b0033;
+  border-left: 4px solid #ff6b00;
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin: 24px 0;
+  box-shadow: 0 4px 20px rgba(255, 107, 0, 0.1);
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.burn-header {
+  margin-bottom: 12px;
+}
+
+.burn-badge {
+  display: inline-block;
+  background-color: rgba(255, 107, 0, 0.15);
+  color: #ff8c32;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 107, 0, 0.3);
+}
+
+.burn-description {
+  color: #b7bdc6;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0 0 16px 0;
+}
+
+.burn-description strong {
+  color: #ffffff;
+}
+
+.burn-action {
+  margin-top: 10px;
+}
+
+.burn-link {
+  color: #f0b90b; /* Color dorado BNB */
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+.burn-link:hover {
+  color: #ff8c32;
+  text-decoration: underline;
+}
+
 
 .tagline {
   color: var(--text-secondary);
