@@ -120,56 +120,80 @@ document.addEventListener("DOMContentLoaded", () => {
   updateButtonsState();
 });
 // ==========================================================================
-// MÓDULO DE ACTIVIDAD DE LA RED (TRANSACCIONES DEX)
+// MÓDULO DE HOLDERS (Covalent API - A PRUEBA DE FALLOS)
 // ==========================================================================
+async function fetchHoldersCount() {
+  const contractAddress = "0xaA56277974856D221393EB9783dd0b07af7de4d1";
+  
+  // OJO: Si aún no tienes tu API Key, déjalo vacío o pon algo temporal. 
+  // El código ahora detectará si falla y pondrá un botón por defecto.
+  const apiKey = "TU_API_KEY_DE_COVALENT_AQUI"; 
+  const url = `https://api.covalenthq.com/v1/56/tokens/${contractAddress}/token_holders_v2/?key=${apiKey}&page-size=1`;
 
+  const holdersElement = document.getElementById("holders-data");
+
+  try {
+    const response = await fetch(url);
+    if (!response.ok) throw new Error("API Key inválida o límite excedido");
+    
+    const data = await response.json();
+
+    if (data?.data?.pagination?.total_count !== undefined) {
+      const totalHolders = data.data.pagination.total_count;
+      holdersElement.innerText = totalHolders.toLocaleString();
+    } else {
+      throw new Error("Datos no encontrados");
+    }
+  } catch (error) {
+    console.warn("Aviso de Holders:", error.message);
+    // FALLBACK: Si no hay API o falla, quita el "Cargando..." y muestra esto:
+    holdersElement.innerHTML = `<span style="font-size: 1.5rem; color: #9aa0b0;">Datos en BscScan</span>`;
+  }
+}
+
+// ==========================================================================
+// MÓDULO DE ACTIVIDAD DE LA RED (TRANSACCIONES DEX - A PRUEBA DE FALLOS)
+// ==========================================================================
 async function fetchNetworkActivity() {
   const contractAddress = "0xaA56277974856D221393EB9783dd0b07af7de4d1";
   const txBody = document.getElementById("tx-body");
   
   try {
-    // 1. Obtener el pool principal de GeckoTerminal para este token
     const poolResponse = await fetch(`https://api.geckoterminal.com/api/v2/networks/bsc/tokens/${contractAddress}`);
+    if (!poolResponse.ok) throw new Error("Token no indexado aún en GeckoTerminal");
+    
     const poolData = await poolResponse.json();
     
-    // Si la API devuelve datos del token, extraemos la info
-    if (poolData && poolData.data) {
-      // Simulación de Holders (GeckoTerminal no da holders, requiere BscScan API)
-      // Para un frontend sin clave API expuesta, se suele fijar un número o dejar el enlace.
-      document.getElementById("holders-data").innerText = "1,200+"; 
+    // VALIDACIÓN CLAVE: Verificamos que realmente exista un pool de liquidez
+    const pools = poolData?.data?.relationships?.top_pools?.data;
+    
+    if (pools && pools.length > 0) {
+      const poolAddress = pools[0].id.split('_')[1];
       
-      // Obtener la dirección del pool (par de liquidez) para ver las transacciones
-      // Nota: Si aún no hay volumen/pool suficiente indexado, la API podría fallar, 
-      // por eso englobamos en try/catch.
-      const poolAddress = poolData.data.relationships.top_pools.data[0].id.split('_')[1];
-      
-      // 2. Obtener las últimas transacciones (Trades) del Pool
       const tradesResponse = await fetch(`https://api.geckoterminal.com/api/v2/networks/bsc/pools/${poolAddress}/trades`);
-      const tradesData = await tradesResponse.json();
+      if (!tradesResponse.ok) throw new Error("No hay trades indexados");
       
-      const trades = tradesData.data;
-      txBody.innerHTML = ""; // Limpiar tabla
+      const tradesData = await tradesResponse.json();
+      const trades = tradesData?.data;
+      
+      txBody.innerHTML = ""; 
       
       if (trades && trades.length > 0) {
-        // Tomar solo las últimas 5 transacciones
         const recentTrades = trades.slice(0, 5);
         
         recentTrades.forEach(trade => {
           const attributes = trade.attributes;
-          const isBuy = attributes.kind === "buy"; // "buy" o "sell"
+          const isBuy = attributes.kind === "buy";
           const typeClass = isBuy ? "tx-buy" : "tx-sell";
           const typeText = isBuy ? "🟢 Compra" : "🔴 Venta";
           
-          // Formatear montos y fechas
           const priceUsd = parseFloat(attributes.price_to_in_usd).toFixed(6);
           const amountToken = parseFloat(attributes.to_token_amount).toLocaleString(undefined, {maximumFractionDigits: 0});
           const totalUsd = parseFloat(attributes.volume_in_usd).toFixed(2);
           
-          // Formatear la fecha/hora
           const date = new Date(attributes.block_timestamp * 1000);
           const timeString = date.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
 
-          // Crear fila
           const tr = document.createElement("tr");
           tr.innerHTML = `
             <td><span class="tx-type ${typeClass}">${typeText}</span></td>
@@ -181,18 +205,26 @@ async function fetchNetworkActivity() {
           txBody.appendChild(tr);
         });
       } else {
-        txBody.innerHTML = `<tr><td colspan="5" style="text-align:center;">No hay transacciones recientes</td></tr>`;
+        throw new Error("No hay transacciones recientes");
       }
+    } else {
+      throw new Error("Sin pool de liquidez activo");
     }
   } catch (error) {
-    console.log("Error al cargar transacciones: ", error);
-    txBody.innerHTML = `<tr><td colspan="5" style="text-align:center; color:#ff4c4c;">No se pudo conectar con el explorador en este momento.</td></tr>`;
-    document.getElementById("holders-data").innerText = "---";
+    console.warn("Aviso de Transacciones:", error.message);
+    // FALLBACK: Si no hay transacciones o el token es muy nuevo, muestra este mensaje amigable
+    txBody.innerHTML = `
+      <tr>
+        <td colspan="5" style="text-align:center; padding: 2rem; color: #9aa0b0;">
+          <div style="font-size: 2rem; margin-bottom: 0.5rem;">⏳</div>
+          Esperando indexación de liquidez en DEX...
+        </td>
+      </tr>`;
   }
 }
 
-// Ejecutar la función al cargar la página
+// Ejecutar las funciones al cargar la página de forma segura
 document.addEventListener("DOMContentLoaded", () => {
-  // Retrasamos la llamada 1 segundo para no saturar la API al cargar el dashboard
+  fetchHoldersCount();
   setTimeout(fetchNetworkActivity, 1000);
 });
