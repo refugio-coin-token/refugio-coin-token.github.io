@@ -193,6 +193,46 @@
       </div>
     </div>
   </section>
+  <!-- Sección de Actividad de la Red (Holders y Transacciones) -->
+  <section class="network-activity-section" id="actividad">
+    <h2>Actividad de la Red</h2>
+    <p class="section-subtitle">Monitoreo en tiempo real del token $RFG en la BNB Smart Chain</p>
+
+    <div class="activity-container">
+      <!-- Tarjeta de Holders -->
+      <div class="holders-card">
+        <div class="holders-icon">👥</div>
+        <h3>Holders Actuales</h3>
+        <div class="holders-value" id="holders-data">Cargando...</div>
+        <p class="holders-desc">Billeteras únicas almacenando el token.</p>
+        <a href="https://bscscan.com/token/0xaA56277974856D221393EB9783dd0b07af7de4d1#balances" target="_blank" class="btn-scan">
+          🔍 Verificar en BscScan
+        </a>
+      </div>
+
+      <!-- Tabla de Transacciones -->
+      <div class="transactions-card">
+        <h3>Últimas Transacciones (DEX)</h3>
+        <div class="table-responsive">
+          <table class="tx-table">
+            <thead>
+              <tr>
+                <th>Tipo</th>
+                <th>Precio (USD)</th>
+                <th>Monto ($RFG)</th>
+                <th>Total (USD)</th>
+                <th>Tiempo</th>
+              </tr>
+            </thead>
+            <tbody id="tx-body">
+              <!-- Los datos se inyectarán aquí vía JavaScript -->
+              <tr><td colspan="5" style="text-align: center; color: var(--text-secondary);">Obteniendo transacciones...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Guía de Compra -->
   <section class="how-to-buy-section">
