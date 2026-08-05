@@ -228,3 +228,26 @@ document.addEventListener("DOMContentLoaded", () => {
   fetchHoldersCount();
   setTimeout(fetchNetworkActivity, 1000);
 });
+
+
+// Actualización del panel en tiempo real mediante API pública
+async function actualizarDashboard() {
+  try {
+    const respuesta = await fetch('https://api.geckoterminal.com/api/v2/networks/bsc/tokens/0xaA56277974856D221393EB9783dd0b07af7de4d1');
+    const datos = await respuesta.json();
+    
+    if (datos?.data?.attributes) {
+      const precio = datos.data.attributes.price_usd;
+      const mcap = datos.data.attributes.fdv_usd;
+
+      document.getElementById('price-data').innerText = `$${parseFloat(precio).toFixed(6)}`;
+      document.getElementById('mcap-data').innerText = `$${Math.round(mcap).toLocaleString()}`;
+    }
+  } catch (error) {
+    console.warn("Aviso al conectar con GeckoTerminal:", error);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  actualizarDashboard();
+});
