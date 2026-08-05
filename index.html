@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RefugioCoin ($RFG) - Tu defensa financiera</title>
   
-  <!-- Etiquetas Meta & Open Graph para redes sociales (Telegram, WhatsApp, X) -->
-  <meta name="description" content="Protocolo descentralizado en BNB Smart Chain. 0% impuestos, liquidez bloqueada por 3 años y auditoría verificada." />
+  <!-- Etiquetas Meta & Open Graph corregidas -->
+  <meta name="description" content="Protocolo descentralizado en BNB Smart Chain. 0.8% impuesto transparente, 99.97% liquidez bloqueada (a 3 y 7 años) y auditoría verificada." />
   <meta property="og:title" content="RefugioCoin ($RFG) - Tu defensa financiera" />
-  <meta property="og:description" content="Protocolo deflacionario en BNB Smart Chain. 0% impuestos en DEX, liquidez bloqueada por 3 años y auditoría aprobada." />
+  <meta property="og:description" content="Protocolo deflacionario en BNB Smart Chain. 0.8% impuesto transparente, liquidez bloqueada y auditoría aprobada." />
   <meta property="og:image" content="https://refugio-coin-token.github.io/logoSvg.svg" />
   <meta property="og:url" content="https://refugio-coin-token.github.io" />
   <meta property="og:type" content="website" />
@@ -17,7 +17,7 @@
   <meta name="twitter:description" content="Reserva descentralizada en BNB Smart Chain con auditoría aprobada de 93.97/100." />
   <meta name="twitter:image" content="https://refugio-coin-token.github.io/logoSvg.svg" />
 
-  <link rel="stylesheet" href="style.css?v=1.1" />
+  <link rel="stylesheet" href="style.css?v=1.2" />
   <link rel="icon" type="image/svg+xml" href="logoSvg.svg">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -47,7 +47,7 @@
           🛒 Comprar $RFG
         </a>
         <a href="./WHITE PAPER- ESTRATEGIA DE DEFENSA ECONÓMICA.pdf" class="btn btn-secondary" target="_blank" style="padding: 10px 20px; border-radius: 8px; text-decoration: none;">
-          <span class="btn-icon">📄</span> Whitepaper
+          <span class="btn-icon">📄</span> Whitepaper v2.1
         </a>
       </div>
 
@@ -73,7 +73,7 @@
       <div class="feature-glow"></div>
       <div class="feature-icon">🔥</div>
       <h3>Impuestos & Quema</h3>
-      <p>Sistema deflacionario programado con baja fricción para asegurar la escasez del activo.</p>
+      <p>Sistema deflacionario programado con 0.8% de tasa transparente para asegurar la escasez del activo.</p>
     </div>
     <div class="feature-card">
       <div class="feature-glow"></div>
@@ -89,7 +89,7 @@
       <span class="burn-badge">🔥 Evento Deflacionario Verificado</span>
     </div>
     <p class="burn-description">
-      Se ha ejecutado con éxito la primera quema deducida de la reserva estratégica, reduciendo de forma irreversible el suministro circundante de <strong>$RFG</strong>.
+      Se ha ejecutado con éxito la primera quema deducida de la reserva estratégica, reduciendo de forma irreversible el suministro circundante de <strong>$RFG</strong> a <strong>96.874.177 tokens</strong>.
     </p>
     <div class="burn-action">
       <a href="https://bscscan.com/tx/0xa5dc652b7a02d68382fcdb65d17a89f1b6807a9be1aa2ba43e6d3511fc87c67a" target="_blank" rel="noopener noreferrer" class="burn-link">
@@ -101,7 +101,7 @@
   <section class="tokenomics-section">
     <div class="container">
       <h2>Distribución y Tokenomics</h2>
-      <p class="section-subtitle">Suministro Fijo Inmutable: <strong class="gold-text"> 96.874.177 $RFG</strong></p>
+      <p class="section-subtitle">Suministro Circulante Actual: <strong class="gold-text">96.874.177 $RFG</strong></p>
       
       <div class="tokenomics-grid">
         <div class="token-card">
@@ -123,15 +123,69 @@
 
       <div class="tax-box">
         <div class="tax-item">
-          <span class="tax-badge">0.8% Impuesto DEX </span>
-          <p><strong>Impuesto Fijo Sostenible de solo 0.8%</strong></p>
+          <span class="tax-badge">0.5% Reserva</span>
+          <p><strong>Bóveda de Reserva & Quemas</strong></p>
         </div>
         <div class="tax-line"></div>
         <div class="tax-item">
-          <span class="tax-badge cyan">0.8% Sostenible</span>
-          <p><strong>Transacciones P2P Directas</strong></p>
+          <span class="tax-badge cyan">0.3% Mantenimiento</span>
+          <p><strong>Desarrollo & Marketing Continuo</strong></p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- NAVEGADOR DE TRANSPARENCIA Y PRUEBA DE RESERVA (NUEVA SECCIÓN ON-CHAIN) -->
+  <section class="transparency-section" id="reserva" style="padding: 50px 20px; max-width: 1000px; margin: 0 auto; text-align: center;">
+    <h2>🛡️ Transparencia & Bóveda de Reserva On-Chain</h2>
+    <p style="color: #9aa0b0; margin-bottom: 35px; max-width: 700px; margin-left: auto; margin-right: auto;">
+      Todas las billeteras, liquidez y activos de respaldo son 100% públicos e inmutables. Haz clic en cada tarjeta para verificar los fondos directamente en los exploradores de bloques.
+    </p>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+      
+      <!-- Tarjeta 1: Reserva BTC (RWA Meta) -->
+      <div style="background: rgba(19, 19, 26, 0.9); border: 1px solid #30363d; border-radius: 16px; padding: 25px; text-align: left; position: relative;">
+        <div style="font-size: 1.1rem; color: #fff; font-weight: bold; margin-bottom: 8px;">🟠 Próxima Meta: Reserva Bitcoin</div>
+        <div style="font-size: 2rem; font-weight: bold; color: #f0b90b; margin-bottom: 5px;">
+          $50.00 <span style="font-size: 1rem; color: #8b949e;">USD</span>
+        </div>
+        <p style="font-size: 0.85rem; color: #9aa0b0; margin-bottom: 20px; line-height: 1.4;">
+          Fondo acumulado de respaldo RWA en la red Bitcoin para dar solidez al token.
+        </p>
+        <a href="https://mempool.space" target="_blank" style="display: block; text-align: center; background: rgba(240, 185, 11, 0.15); border: 1px solid #f0b90b; color: #f0b90b; padding: 10px 15px; border-radius: 8px; text-decoration: none; font-size: 0.85rem; font-weight: bold; transition: 0.3s;">
+          🔍 Auditar Reserva BTC
+        </a>
+      </div>
+
+      <!-- Tarjeta 2: Liquidez Bloqueada (Mudra Manager) -->
+      <div style="background: rgba(19, 19, 26, 0.9); border: 1px solid #30363d; border-radius: 16px; padding: 25px; text-align: left;">
+        <div style="font-size: 1.1rem; color: #fff; font-weight: bold; margin-bottom: 8px;">🔒 99.97% Liquidez Bloqueada</div>
+        <div style="font-size: 1.8rem; font-weight: bold; color: #3fb950; margin-bottom: 5px;">
+          3 y 7 Años
+        </div>
+        <p style="font-size: 0.85rem; color: #9aa0b0; margin-bottom: 20px; line-height: 1.4;">
+          38.55% desbloquea en 3 años • 61.41% desbloquea en 7 años vía Mudra Manager.
+        </p>
+        <a href="https://mudra.website/?certificate=yes&type=0&lp=0x3aee700f2487cf1e7f09f2efb5de0152fbe567e4" target="_blank" style="display: block; text-align: center; background: #238636; color: #ffffff; padding: 10px 15px; border-radius: 8px; text-decoration: none; font-size: 0.85rem; font-weight: bold; transition: 0.3s;">
+          🔐 Ver Certificado en Mudra
+        </a>
+      </div>
+
+      <!-- Tarjeta 3: Bóveda de Reserva $RFG -->
+      <div style="background: rgba(19, 19, 26, 0.9); border: 1px solid #30363d; border-radius: 16px; padding: 25px; text-align: left;">
+        <div style="font-size: 1.1rem; color: #fff; font-weight: bold; margin-bottom: 8px;">🔥 Bóveda Deflacionaria</div>
+        <div style="font-size: 1.8rem; font-weight: bold; color: #f0f6fc; margin-bottom: 5px;">
+          26.87M <span style="font-size: 1rem; color: #8b949e;">$RFG</span>
+        </div>
+        <p style="font-size: 0.85rem; color: #9aa0b0; margin-bottom: 20px; line-height: 1.4;">
+          Tokens retenidos en custodia exclusiva para la ejecución de quemas anuales del 10%.
+        </p>
+        <a href="https://bscscan.com/token/0xaA56277974856D221393EB9783dd0b07af7de4d1?a=0x000000000000000000000000000000000000dEaD" target="_blank" style="display: block; text-align: center; background: #21262d; border: 1px solid #30363d; color: #f0f6fc; padding: 10px 15px; border-radius: 8px; text-decoration: none; font-size: 0.85rem; font-weight: bold; transition: 0.3s;">
+          🔥 Historial en BscScan
+        </a>
+      </div>
+
     </div>
   </section>
 
@@ -162,7 +216,7 @@
               🟢 <strong>Honeypot Check:</strong> No es Honeypot
           </div>
           <div style="background: rgba(22, 27, 34, 0.8); padding: 12px 15px; border-radius: 10px; border: 1px solid #30363d;">
-              💸 <strong>Impuestos DEX:</strong> 0% Compra / Venta
+              💸 <strong>Impuesto Transparente:</strong> 0.8%
           </div>
       </div>
 
@@ -185,14 +239,15 @@
       </div>
       <div class="dash-card">
         <span class="dash-label">Estado Auditoría</span>
-        <span class="dash-value-green">100% OK</span>
+        <span class="dash-value-green">93.97 OK</span>
       </div>
       <div class="dash-card">
         <span class="dash-label">Liquidez Bloqueada</span>
-        <span class="dash-value">Hasta 2029</span>
+        <span class="dash-value">99.97% (3 y 7 años)</span>
       </div>
     </div>
   </section>
+
   <!-- Sección de Actividad de la Red (Holders y Transacciones) -->
   <section class="network-activity-section" id="actividad">
     <h2>Actividad de la Red</h2>
@@ -225,7 +280,6 @@
               </tr>
             </thead>
             <tbody id="tx-body">
-              <!-- Los datos se inyectarán aquí vía JavaScript -->
               <tr><td colspan="5" style="text-align: center; color: var(--text-secondary);">Obteniendo transacciones...</td></tr>
             </tbody>
           </table>
@@ -317,7 +371,7 @@
       <div class="roadmap-step fase-completada">
         <div class="step-badge">Fase 1</div>
         <h4>Génesis, Transparencia y Primera Quema</h4>
-        <p>Lanzamiento del contrato inmutable en la BNB Smart Chain (100M supply), bloqueo de liquidez en Mudra Locker por 3 años y ejecución con éxito del primer evento anual de quema del 10% sobre la reserva.</p>
+        <p>Lanzamiento del contrato inmutable en la BNB Smart Chain (100M supply), bloqueo del 99.97% de liquidez a 3 y 7 años en Mudra Locker y ejecución con éxito del primer evento anual de quema del 10% sobre la reserva.</p>
         <ul class="roadmap-list" style="font-size: 0.9rem; color: #ccc; margin-top: 0.5rem; padding-left: 1.2rem;">
           <li>✓ Contrato verificado en BscScan</li>
           <li>✓ Liquidez blindada por contrato</li>
@@ -329,11 +383,11 @@
       <div class="roadmap-step fase-progreso">
         <div class="step-badge">Fase 2</div>
         <h4>Tráfico, Indexación e Inmunización</h4>
-        <p>Campaña de marketing orgánico en redes sociales, proceso de verificación en CoinGecko y CoinMarketCap, y auditoría de código externa para certificar inmunidad total contra ciberataques o manipulaciones.</p>
+        <p>Campaña de marketing orgánico en redes sociales, proceso de verificación en CoinGecko y CoinMarketCap, y auditoría de código externa (SolidityScan: 93.97/100).</p>
         <ul class="roadmap-list" style="font-size: 0.9rem; color: #ccc; margin-top: 0.5rem; padding-left: 1.2rem;">
           <li>• Difusión diaria en TikTok y X</li>
           <li>• Indexación en rastreadores Web3</li>
-          <li>• Auditoría de seguridad y filtros antibot</li>
+          <li>• Auditoría de seguridad aprobada</li>
         </ul>
         <span class="status-tag">En progreso</span>
       </div>
@@ -341,7 +395,7 @@
       <div class="roadmap-step fase-espera">
         <div class="step-badge">Fase 3</div>
         <h4>Utilidad DeFi, Staking y DAO</h4>
-        <p>Despliegue del contrato de Staking (Bóveda de Protección) para generar rendimiento pasivo, integración de la gobernanza comunitaria DAO en Snapshot y primeros listados en Exchanges Centralizados (CEX).</p>
+        <p>Despliegue del contrato de Staking (Bóveda de Protección de Rendimiento Real), integración de la gobernanza comunitaria DAO en Snapshot y primeros listados en Exchanges Centralizados (CEX).</p>
         <ul class="roadmap-list" style="font-size: 0.9rem; color: #ccc; margin-top: 0.5rem; padding-left: 1.2rem;">
           <li>• Protocolo de Staking e incentivos</li>
           <li>• Votación DAO descentralizada</li>
@@ -353,7 +407,7 @@
       <div class="roadmap-step fase-espera">
         <div class="step-badge">Fase 4</div>
         <h4>Estructura Legal y Diversificación RWA</h4>
-        <p>Constitución de la entidad legal bajo normativa regulatoria (MiCA), e inicio del fondo de reinversión en activos del mundo real (RWA): inmuebles, bolsa y metales preciosos para dar un valor suelo físico a la reserva.</p>
+        <p>Constitución de la entidad legal bajo normativa regulatoria (MiCA), e inicio del fondo de reinversión en activos del mundo real (RWA): acumulación de Bitcoin (BTC), oro tokenizado (PAXG) e inmuebles.</p>
         <ul class="roadmap-list" style="font-size: 0.9rem; color: #ccc; margin-top: 0.5rem; padding-left: 1.2rem;">
           <li>• Formalización de empresa Web3</li>
           <li>• Adquisición de activos físicos (RWA)</li>
@@ -404,7 +458,7 @@
     </div>
   </section>
 
-  <!-- Redes Sociales y Footer Correjido -->
+  <!-- Redes Sociales y Footer -->
   <footer class="site-footer">
     <div class="footer-container">
       <div class="social-links" style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-bottom: 25px;">
@@ -429,38 +483,6 @@
   </footer>
 
   <script src="script.js"></script>
-  <script>
-    // Función para el botón de copiar contrato en JS
-    function copyContract() {
-      const address = document.getElementById('contract-address').innerText;
-      navigator.clipboard.writeText(address).then(() => {
-        const btn = document.getElementById('btn-copy');
-        btn.innerText = '✅ ¡Copiado!';
-        setTimeout(() => {
-          btn.innerText = '📋 Copiar';
-        }, 2000);
-      });
-    }
-
-    // Actualización del panel en tiempo real
-    async function actualizarDashboard() {
-      try {
-        const respuesta = await fetch('https://api.geckoterminal.com/api/v2/networks/bsc/tokens/0xaA56277974856D221393EB9783dd0b07af7de4d1');
-        const datos = await respuesta.json();
-        
-        const precio = datos.data.attributes.price_usd;
-        const mcap = datos.data.attributes.fdv_usd;
-
-        document.getElementById('price-data').innerText = `$${parseFloat(precio).toFixed(6)}`;
-        document.getElementById('mcap-data').innerText = `$${Math.round(mcap).toLocaleString()}`;
-        
-      } catch (error) {
-        console.log("Error al conectar con la API de GeckoTerminal:", error);
-      }
-    }
-
-    actualizarDashboard();
-  </script>
 
 </body>
 </html>
